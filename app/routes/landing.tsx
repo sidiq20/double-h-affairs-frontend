@@ -62,7 +62,7 @@ const weddingContent = [
   {
     id: 'qa',
     title: 'Q&A',
-    content: 'Frequently Asked Questions:\n\n• What time should I arrive? Please arrive by 1:30 PM\n• Is parking available? Yes, ample parking is provided\n• Gift registry? Your presence is our present\n• Children welcome? Yes, this is a family celebration',
+    content: 'Frequently Asked Questions:\n\n• What time should I arrive? Please arrive by 1:30 PM\n• Is parking available? Yes, ample parking is provided\n• What is the deadline for RSVP? December 10\n• Children welcome? Yes, this is a family celebration',
     image: '/them2.jpg',
     icon: faUsers,
     bgColor: 'from-purple-50 to-rose-100',
