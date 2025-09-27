@@ -42,13 +42,31 @@ const weddingContent = [
     subtitle: "Hummulkhair's Toast"
   },
   {
+    id: 'quran-verse',
+    title: "Divine Blessing",
+    content: 'And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts. In this are signs for those who reflect.',
+    image: '/them.jpg',
+    icon: faHeart,
+    bgColor: 'from-rose-50 to-pink-100',
+    subtitle: "Qur'an 30:21"
+  },
+  {
     id: 'from hafeez',
     title: "A Toast to Love",
-    content: "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, and wonderful kind. alhamdulillah for the gift of you in my life. you are coolness of my eyes, the joy of my heart, and the pather allah destenined for me. as we begin this new chapter together, i pray that allah continues to bless our union with love, mercy, and tranquility, as He has promised in His words: 'And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts.' (Qur'an 30:21) to a lifetime of love, laughter, and endless barakah. cheers to us, my besfriend and soulmate, Morenikeji mi.",
+    content: "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, wonderfully kind. Alhamdulillah for the gift of you in my life. You are the coolness of my eyes, the joy of my heart, and the path Allah destined for me. As we begin this new chapter together, I pray that Allah continues to bless our union with love, mercy, and tranquility. To a lifetime of love, laughter, and endless barakah. Cheers to us, my best friend and soulmate, Morenikeji mi.",
     image: '/us.jpg',
     icon: faHeart,
     bgColor: 'from-orange-50 to-amber-100',
     subtitle: "Hafeez's Toast"
+  },
+  {
+    id: 'story',
+    title: 'Our Story',
+    content: 'Two hearts, guided by Allah, crossed paths in medical school in ways only He could have planned. What began as a simple connection grew, over time, into friendship, trust, and finally love. With patience and faith, Allah turned that bond into the partnership we had both prayed for. Today, we are grateful to begin this new chapter not just as doctors shaping our careers, but as soulmates building a life together.',
+    image: '/double2.jpg',
+    icon: faRing,
+    bgColor: 'from-green-50 to-amber-100',
+    subtitle: "How It All Began"
   },
   {
     id: 'schedule',
@@ -69,22 +87,22 @@ const weddingContent = [
     subtitle: "Your Questions Answered"
   },
   {
+    id: 'donations',
+    title: '',
+    content: 'No physical gifts allowed, your presence is our present. However, should you wish to give in other ways, we would be grateful if such gesture is monetized.',
+    image: '/image.jpg',
+    icon: faGift,
+    bgColor: 'from-amber-50 to-orange-100',
+    subtitle: "From Our Hearts"
+  },
+  {
     id: 'tidbits',
-    title: 'Couples Voice',
-    content: '"May Allah bless our union and fill our journey with endless love, joy, and barakah." — Hummulkhair & Abdul-Hafeez',
+    title: "Couple's Voice",
+    content: 'With hearts full of gratitude, we give thanks to Almighty Allah for guiding our steps and making this union possible. We extend our deepest appreciation to our families, friends, and well-wishers for the love, prayers, and support you have shown us. Your presence on this journey is an honour we do not take for granted. As we look forward to sharing our special day with you, we pray that Allah rewards your kindness abundantly and fills your lives with peace, joy, and lasting blessings.',
     image: '/image.jpg',
     icon: faGift,
     bgColor: 'from-pink-50 to-amber-100',
     subtitle: "Sweet Details"
-  },
-  {
-    id: 'story',
-    title: 'Our Story',
-    content: '"And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts." (Qur\'an 30:21) Our journey began with a simple hello, blossomed into shared dreams, and now we stand on the threshold of forever. Join us as we celebrate the next chapter of our love story.',
-    image: '/double2.jpg',
-    icon: faRing,
-    bgColor: 'from-green-50 to-amber-100',
-    subtitle: "How It All Began"
   }
 ];
 
@@ -237,6 +255,10 @@ export default function Landing() {
                         ? 'bg-gradient-to-br from-purple-50/40 to-rose-50/40'
                         : section.id === 'story'
                         ? 'bg-gradient-to-br from-green-50/50 to-amber-50/50'
+                        : section.id === 'quran-verse'
+                        ? 'bg-gradient-to-br from-rose-50/60 to-pink-50/60'
+                        : section.id === 'donations'
+                        ? 'bg-gradient-to-br from-amber-50/50 to-orange-50/50'
                         : 'bg-gradient-to-br from-pink-50/40 to-orange-50/40'
                       : 'bg-orange-50/20'
                   }`}
@@ -283,20 +305,33 @@ export default function Landing() {
                         <>
                           <div className="wedding-card max-w-2xl mx-auto p-8">
                             <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
-                              "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, and wonderful kind. alhamdulillah for the gift of you in my life."
+                              "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, and wonderful kind. Alhamdulillah for the gift of you in my life."
                             </p>
                             <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
-                              "You are coolness of my eyes, the joy of my heart, and the path allah destined for me. as we begin this new chapter together, i pray that allah continues to bless our union with love, mercy, and tranquility."
+                              "You are the coolness of my eyes, the joy of my heart, and the path Allah destined for me. As we begin this new chapter together, I pray that Allah continues to bless our union with love, mercy, and tranquility."
                             </p>
                             <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
-                              "'And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts.' (Qur'an 30:21)"
-                            </p>
-                            <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
-                              "To a lifetime of love, laughter, and endless barakah. cheers to us, my best friend and soulmate, Morenikeji mi."
+                              "To a lifetime of love, laughter, and endless barakah. Cheers to us, my best friend and soulmate, Morenikeji mi."
                             </p>
                             <p className="text-pink-600 font-script text-lg">
                               — Hafeez's Heart
                             </p>
+                          </div>
+                        </>
+                      )}
+
+                      {section.id === 'quran-verse' && (
+                        <>
+                          <div className="wedding-card max-w-2xl mx-auto p-8 text-center bg-gradient-to-r from-rose-50/80 to-pink-50/80 border-rose-200/40">
+                            <div className="mb-6">
+                              <div className="w-16 h-16 bg-gradient-to-r from-rose-100 to-pink-100 rounded-full flex items-center justify-center mx-auto shadow-gentle">
+                                <FontAwesomeIcon icon={faHeart} className="text-2xl text-rose-500" />
+                              </div>
+                            </div>
+                            <p className="text-xl leading-relaxed text-rose-700 font-serif font-light italic mb-6">
+                              "{section.content}"
+                            </p>
+                            <p className="text-rose-600 font-script text-lg">— Qur'an 30:21</p>
                           </div>
                         </>
                       )}
@@ -341,6 +376,17 @@ export default function Landing() {
                             {/* Story Cards */}
                             <div className="grid md:grid-cols-2 gap-8 mb-8">
                               {/* How We Met */}
+                              <div className="wedding-card p-8 bg-gradient-to-br from-green-50/80 to-amber-50/80 border-green-200/30">
+                                <div className="text-center mb-6">
+                                  <div className="w-16 h-16 bg-gradient-to-r from-green-100 to-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-gentle">
+                                    <FontAwesomeIcon icon={faHeart} className="text-2xl text-green-600" />
+                                  </div>
+                                  <h3 className="text-xl font-elegant font-medium text-green-800">Divine Connection</h3>
+                                </div>
+                                <p className="text-lg leading-relaxed text-green-700 font-serif font-light text-center">
+                                  Two hearts found each other by Allah's grace. From friendship to love, from love to this beautiful commitment. We invite you to witness the beginning of our forever.
+                                </p>
+                              </div>
 
 
                             </div>
@@ -417,19 +463,24 @@ export default function Landing() {
                         </div>
                       )}
 
+                      {section.id === 'donations' && (
+                        <>
+                          <div className="max-w-4xl mx-auto">
+                            <DonationSection className="" />
+                          </div>
+                        </>
+                      )}
+
                       {section.id === 'tidbits' && (
                         <>
-                          <div className="wedding-card max-w-2xl mx-auto p-8 text-center mb-8">
+                          <div className="wedding-card max-w-2xl mx-auto p-8 text-center">
                             <p className="text-xl leading-relaxed text-pink-700 font-serif font-light italic mb-6">
-                              "May Allah bless our union and fill our journey with endless love, joy, and barakah."
+                              With hearts full of gratitude, we give thanks to Almighty Allah for guiding our steps and making this union possible. We extend our deepest appreciation to our families, friends, and well-wishers for the love, prayers, and support you have shown us. Your presence on this journey is an honour we do not take for granted. As we look forward to sharing our special day with you, we pray that Allah rewards your kindness abundantly and fills your lives with peace, joy, and lasting blessings.
                             </p>
                             <p className="text-pink-600 font-script text-lg">
-                              — Hummulkhair & Abdul-Hafeez
+                              — Drs Olasode Abdulhafeez & Hummulkair❤
                             </p>
                           </div>
-
-                          {/* Donation Section integrated here */}
-                          <DonationSection className="mt-12" />
                         </>
                       )}
                     </div>
@@ -467,6 +518,10 @@ export default function Landing() {
                 ? 'bg-gradient-to-br from-purple-50/60 to-rose-50/60'
                 : section.id === 'story'
                 ? 'bg-gradient-to-br from-green-50/70 to-amber-50/70'
+                : section.id === 'quran-verse'
+                ? 'bg-gradient-to-br from-rose-50/70 to-pink-50/70'
+                : section.id === 'donations'
+                ? 'bg-gradient-to-br from-amber-50/70 to-orange-50/70'
                 : 'bg-gradient-to-br from-pink-50/60 to-orange-50/60'
             }`}
           >
@@ -504,16 +559,34 @@ export default function Landing() {
                   <>
                     <div className="wedding-card p-6">
                       <p className="text-lg leading-relaxed text-amber-700 font-serif font-light italic mb-4">
-                        "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, and wonderful kind. alhamdulillah for the gift of you in my life."
+                        "A toast to my wife, my crown, my forever blessing Morenikeji mi. Forever warm, wise, wonderfully kind. Alhamdulillah for the gift of you in my life."
                       </p>
                       <p className="text-lg leading-relaxed text-amber-700 font-serif font-light italic mb-4">
-                        "You are coolness of my eyes, the joy of my heart, and the path allah destined for me. as we begin this new chapter together, i pray that allah continues to bless our union with love, mercy, and tranquility."
+                        "You are the coolness of my eyes, the joy of my heart, and the path Allah destined for me. As we begin this new chapter together, I pray that Allah continues to bless our union with love, mercy, and tranquility."
                       </p>
                       <p className="text-lg leading-relaxed text-amber-700 font-serif font-light italic mb-4">
-                        "To a lifetime of love, laughter, and endless barakah. cheers to us, my best friend and soulmate, Morenikeji mi."
+                        "To a lifetime of love, laughter, and endless barakah. Cheers to us, my best friend and soulmate, Morenikeji mi."
                       </p>
                       <p className="text-pink-600 font-script text-base">
                         — Hafeez's Heart
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                {section.id === 'quran-verse' && (
+                  <>
+                    <div className="wedding-card p-6 text-center bg-gradient-to-r from-rose-50/80 to-pink-50/80 border-rose-200/40">
+                      <div className="mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-rose-100 to-pink-100 rounded-full flex items-center justify-center mx-auto shadow-gentle">
+                          <FontAwesomeIcon icon={faHeart} className="text-xl text-rose-500" />
+                        </div>
+                      </div>
+                      <p className="text-lg leading-relaxed text-rose-700 font-serif font-light italic mb-4">
+                        "{section.content}"
+                      </p>
+                      <p className="text-rose-600 font-script text-base">
+                        — Qur'an 30:21
                       </p>
                     </div>
                   </>
@@ -561,16 +634,16 @@ export default function Landing() {
                       </p>
                       {section.id === 'tidbits' && (
                         <p className="text-pink-600 font-script text-base mt-4 text-center">
-                          — Hummulkhair & Abdul-Hafeez
+                          — Drs Olasode Abdulhafeez & Hummulkair❤
                         </p>
                       )}
                     </div>
-                    
-                    {section.id === 'tidbits' && (
-                      <div className="mt-8">
-                        <DonationSection />
-                      </div>
-                    )}
+                  </div>
+                )}
+
+                {section.id === 'donations' && (
+                  <div className="space-y-6">
+                    <DonationSection />
                   </div>
                 )}
 
