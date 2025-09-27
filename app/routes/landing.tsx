@@ -323,7 +323,7 @@ export default function Landing() {
                               <h3 className="text-xl font-serif font-medium text-rose-800 text-center">Where</h3>
                               <div className="text-center space-y-2">
                                 <p className="text-lg text-rose-600 font-light">Luxery Party Event center</p>
-                                <p className="text-lg text-rose-600 font-light">2 MKO ABIOLA GARDENS RD, AGIDINGBI IKEJA LAGOS</p>
+                                <p className="text-lg text-rose-600 font-light">Block G, plot A2 MKO ABIOLA GARDEN ROAD , beside ADDONAI court. Alausa Ikeja.</p>
                                 <p className="text-lg text-rose-600 font-light">Lagos, Nigeria</p>
                               </div>
                             </div>
@@ -417,8 +417,9 @@ export default function Landing() {
                                   <FontAwesomeIcon icon={faGift} className="text-amber-600" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-serif font-medium text-amber-800 mb-2">Gift registry?</h3>
-                                  <p className="text-amber-700 font-light leading-relaxed">Your presence is our present. No physical gifts needed.</p>
+                                  <h3 className="text-lg font-serif font-medium text-amber-800 mb-2">
+                                    RSVP deadline</h3>
+                                  <p className="text-amber-700 font-light leading-relaxed">December 10.</p>
                                 </div>
                               </div>
                             </div>
@@ -561,7 +562,7 @@ export default function Landing() {
                         <h3 className="text-lg font-serif font-medium text-rose-800 text-center mb-3">Where</h3>
                         <div className="text-center space-y-1">
                           <p className="text-rose-600 font-light">LUXURY PARTY EVENT CENTER</p>
-                          <p className="text-rose-600 font-light">2MKO ABIOLA GARDENS, Lagos, Nigeria</p>
+                          <p className="text-rose-600 font-light">Block G, plot A2 MKO ABIOLA GARDEN ROAD , beside ADDONAI court. Alausa Ikeja.</p>
                         </div>
                       </div>
                     </div>
@@ -628,8 +629,8 @@ export default function Landing() {
                           <FontAwesomeIcon icon={faGift} className="text-amber-600 text-sm" />
                         </div>
                         <div>
-                          <h3 className="text-base font-serif font-medium text-amber-800 mb-1">Gift registry?</h3>
-                          <p className="text-amber-700 font-light text-sm leading-relaxed">Your presence is our present. No physical gifts needed.</p>
+                          <h3 className="text-base font-serif font-medium text-amber-800 mb-1">RSVP DEADLINE</h3>
+                          <p className="text-amber-700 font-light text-sm leading-relaxed">demeber 10</p>
                         </div>
                       </div>
                     </div>
