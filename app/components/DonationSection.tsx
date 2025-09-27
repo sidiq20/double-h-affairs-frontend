@@ -100,7 +100,7 @@ export default function DonationSection({ className = "" }: DonationSectionProps
             Wedding Gift
           </h2>
           <p className="text-amber-700 text-lg max-w-xl mx-auto leading-relaxed font-serif font-light">
-            No physican gift allowed. Your presence is the greatest gift we could ever ask for. However if you would still like to Honour us with a gesture we would be deeply grateful if such  is monitized.
+            No physical gift allowed. Your presence is the greatest gift we could ever ask for. However if you would still like to Honour us with a gesture we would be deeply grateful if such  is monitized.
           </p>
         </div>
 
