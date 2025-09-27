@@ -21,8 +21,14 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
+  const [audioUnlocked, setAudioUnlocked] = useState(false);
 
   useEffect(() => {
+    // Detect iOS
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    setIsIOS(iOS);
+    
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -45,6 +51,35 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
       setIsLoading(false);
     }, 2000);
 
+    // iOS Audio Unlock Logic
+    const unlockAudioForIOS = async () => {
+      if (iOS && !audioUnlocked) {
+        try {
+          await audio.play();
+          audio.pause();
+          audio.currentTime = 0;
+          setAudioUnlocked(true);
+          console.log('Audio unlocked for iOS');
+        } catch (error) {
+          console.log('Audio unlock failed, will try again on user interaction');
+        }
+      }
+    };
+
+    // Try to unlock audio immediately
+    unlockAudioForIOS();
+
+    // Add listeners for user interaction to unlock audio
+    const unlockOnInteraction = () => {
+      if (iOS && !audioUnlocked) {
+        unlockAudioForIOS();
+      }
+    };
+
+    document.addEventListener('touchstart', unlockOnInteraction, { once: true });
+    document.addEventListener('touchend', unlockOnInteraction, { once: true });
+    document.addEventListener('click', unlockOnInteraction, { once: true });
+
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('loadedmetadata', updateDuration);
     audio.addEventListener('loadeddata', handleLoadedData);
@@ -55,6 +90,9 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
 
     return () => {
       clearTimeout(fallbackTimer);
+      document.removeEventListener('touchstart', unlockOnInteraction);
+      document.removeEventListener('touchend', unlockOnInteraction);
+      document.removeEventListener('click', unlockOnInteraction);
       audio.removeEventListener('timeupdate', updateTime);
       audio.removeEventListener('loadedmetadata', updateDuration);
       audio.removeEventListener('loadeddata', handleLoadedData);
@@ -63,7 +101,7 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('error', handleError);
     };
-  }, []);
+  }, [audioUnlocked]);
 
   const togglePlay = async () => {
     const audio = audioRef.current;
@@ -74,18 +112,52 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
         audio.pause();
         setIsPlaying(false);
       } else {
+        // For iOS, try to unlock audio first
+        if (isIOS && !audioUnlocked) {
+          try {
+            await audio.play();
+            audio.pause();
+            audio.currentTime = 0;
+            setAudioUnlocked(true);
+          } catch (unlockError) {
+            console.log('Failed to unlock audio on iOS');
+          }
+        }
+
         // Ensure the audio is ready
         if (audio.readyState < 2) {
           setIsLoading(true);
-          await new Promise((resolve) => {
-            const onCanPlay = () => {
+          
+          // Wait for audio to be ready or timeout after 3 seconds
+          const readyPromise = new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => {
               audio.removeEventListener('canplay', onCanPlay);
+              audio.removeEventListener('loadeddata', onCanPlay);
+              reject(new Error('Audio load timeout'));
+            }, 3000);
+            
+            const onCanPlay = () => {
+              clearTimeout(timeout);
+              audio.removeEventListener('canplay', onCanPlay);
+              audio.removeEventListener('loadeddata', onCanPlay);
               resolve(true);
             };
+            
             audio.addEventListener('canplay', onCanPlay);
+            audio.addEventListener('loadeddata', onCanPlay);
           });
+          
+          try {
+            await readyPromise;
+          } catch {
+            console.log('Audio not ready, attempting to play anyway');
+          }
+          
           setIsLoading(false);
         }
+        
+        // Set volume for iOS (sometimes gets reset)
+        audio.volume = isMuted ? 0 : volume;
         
         await audio.play();
         setIsPlaying(true);
@@ -94,6 +166,11 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
       console.error('Audio play error:', error);
       setIsLoading(false);
       setIsPlaying(false);
+      
+      // Show user-friendly error for iOS
+      if (isIOS) {
+        alert('Audio playback blocked. Please try tapping the play button again.');
+      }
     }
   };
 
@@ -133,7 +210,9 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
       <audio
         ref={audioRef}
         src="/lana.mp3"
-        preload="metadata"
+        preload="none"
+        playsInline
+        controls={false}
         crossOrigin="anonymous"
       />
       
@@ -166,7 +245,7 @@ export default function FloatingAudioPlayer({ className = '' }: FloatingAudioPla
               onClick={() => setIsExpanded(true)}
               className="text-white/70 hover:text-white text-xs px-2 py-1 hover:bg-white/10 rounded-full transition-all duration-300"
             >
-              Our Song
+              {isIOS && !audioUnlocked ? 'Tap to Unlock' : 'Our Song'}
             </button>
           </div>
         ) : (
