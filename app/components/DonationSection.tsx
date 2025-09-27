@@ -100,7 +100,7 @@ export default function DonationSection({ className = "" }: DonationSectionProps
             Wedding Gift
           </h2>
           <p className="text-amber-700 text-lg max-w-xl mx-auto leading-relaxed font-serif font-light">
-            no physicial gits allowed, kindly send your gifts to our account details below
+            no physicial gits allowed, your presence is our present. however, should you wish to give in other ways, we would be grateful if such gesture is monitzed
           </p>
         </div>
 

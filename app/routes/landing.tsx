@@ -53,7 +53,7 @@ const weddingContent = [
   {
     id: 'schedule',
     title: 'Schedule & Details',
-    content: 'Join us for our special celebration at luxury party event centre, 2b, oladipo diya road, ikeja, lagos on Sunday, December 14th, 2025. Dress code: Native attire. The ceremony begins at 1:00 PM followed by reception.',
+    content: 'Join us for our special celebration at luxury party event centre, 2b, oladipo diya road, ikeja, lagos on Sunday, December 14th, 2025. Dress code: Peach and green. The ceremony begins at 1:00 PM followed by reception.',
     image: '/them.jpg',
     icon: faCalendarAlt,
     bgColor: 'from-rose-50 to-orange-100',
@@ -330,7 +330,7 @@ export default function Landing() {
                           </div>
 
                           <div className="mt-12 wedding-card p-6 max-w-md mx-auto text-center">
-                            <p className="text-lg text-amber-700 font-serif"><span className="font-medium">Dress Code:</span> Native Attire</p>
+                            <p className="text-lg text-amber-700 font-serif"><span className="font-medium">Dress Code:</span> Peach and green</p>
                           </div>
                         </>
                       )}
@@ -568,7 +568,7 @@ export default function Landing() {
 
                     <div className="mt-6">
                       <div className="wedding-card p-4 text-center">
-                        <p className="text-amber-700 font-serif"><span className="font-medium">Dress Code:</span> Native Attire</p>
+                        <p className="text-amber-700 font-serif"><span className="font-medium">Dress Code:</span> Peach and green</p>
                       </div>
                     </div>
                   </>
