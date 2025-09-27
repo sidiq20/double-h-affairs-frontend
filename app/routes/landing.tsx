@@ -8,11 +8,17 @@ import {
   faClock,
   faUsers,
   faChurch,
-  faGift
+  faGift,
+  faPlay,
+  faPause,
+  faVolumeUp,
+  faVolumeMute,
+  faMusic
 } from '@fortawesome/free-solid-svg-icons';
 import type { Route } from './+types/landing';
 import HeroSection from "../components/HeroSection";
 import DonationSection from "../components/DonationSection";
+import FloatingAudioPlayer from "../components/FloatingAudioPlayer";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -750,22 +756,27 @@ export default function Landing() {
         <div className="absolute -top-2 -right-2 w-4 h-4 bg-pink-400 animate-ping rounded-full"></div>
       </div>
 
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        
-        .line-clamp-3 {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-        }
-        
-        .font-serif {
-          font-family: 'Georgia', 'Times New Roman', serif;
-        }
-      `}</style>
+      {/* Floating Audio Player */}
+      <FloatingAudioPlayer />
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          
+          .line-clamp-3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+          }
+          
+          .font-serif {
+            font-family: 'Georgia', 'Times New Roman', serif;
+          }
+        `
+      }} />
     </div>
   );
 }
