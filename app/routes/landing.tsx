@@ -41,7 +41,7 @@ const weddingContent = [
   {
     id: 'toast',
     title: "Bismillah ar-Rahman ar-Rahim",
-    content: 'Today, my heart feels stitched with quiet joy, every thread a prayer, every color a promise. You are my calm in the storm and my laughter in the silence. I ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light.',
+    content: 'Today, my heart feels stitched with quiet joy, every thread a prayer, every color a promise. You are my calm in the storm and my laughter in the silence. I ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light. "To the man who softened my heart, I"m so grateful I get to call you mine."',
     image: '/love.jpg',
     icon: faHeart,
     bgColor: 'from-orange-50 to-amber-100',
@@ -68,7 +68,7 @@ const weddingContent = [
   {
     id: 'story',
     title: 'Our Story',
-    content: 'Two hearts, guided by Allah, crossed paths in medical school in ways only He could have planned. What began as a simple connection, grew over time, into friendship, trust, and finally love. With patience and faith, Allah turned that bond into the partnership we had both prayed for. Today, we are grateful to begin this new chapter not just as doctors shaping our careers, but as soulmates building a life together.',
+    content: 'Two hearts, guided by Allah, crossed paths in medical school in ways only He could have planned. What began as a simple connection, grew over time into friendship, trust, and finally love. With patience and faith, Allah turned that bond into the partnership we had both prayed for. Today, we are grateful to begin this new chapter not just as doctors shaping our careers, but as soulmates building a life together.',
     image: '/double2.jpg',
     icon: faRing,
     bgColor: 'from-green-50 to-amber-100',
