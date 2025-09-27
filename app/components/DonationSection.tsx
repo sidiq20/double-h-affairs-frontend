@@ -142,7 +142,7 @@ export default function DonationSection({ className = "" }: DonationSectionProps
           <p className="text-amber-700 font-serif font-light leading-relaxed italic">
             "Your kindness and generosity mean the world to us. May Allah bless you abundantly for your love and thoughtfulness."
           </p>
-          <p className="text-pink-600 font-script text-lg mt-4">— Abdul-Hafeez & Hummulkhair</p>
+          <p className="text-pink-600 font-script text-lg mt-4">— Hummulkhair & Abdul-Hafeez</p>
         </div>
 
         {/* Decorative Bottom */}

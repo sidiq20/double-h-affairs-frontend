@@ -80,7 +80,7 @@ const weddingContent = [
   {
     id: 'story',
     title: 'Our Story',
-    content: 'Two hearts found each other by Allah\'s grace. From friendship to love, from love to this beautiful commitment. We invite you to witness the beginning of our forever, surrounded by family, friends, and abundant blessings.',
+    content: '"And among His signs is this: He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts." (Qur\'an 30:21) Our journey began with a simple hello, blossomed into shared dreams, and now we stand on the threshold of forever. Join us as we celebrate the next chapter of our love story.',
     image: '/double2.jpg',
     icon: faRing,
     bgColor: 'from-green-50 to-amber-100',
@@ -341,30 +341,8 @@ export default function Landing() {
                             {/* Story Cards */}
                             <div className="grid md:grid-cols-2 gap-8 mb-8">
                               {/* How We Met */}
-                              <div className="wedding-card p-8 bg-gradient-to-br from-green-50/80 to-amber-50/80 border-green-200/30">
-                                <div className="text-center mb-6">
-                                  <div className="w-16 h-16 bg-gradient-to-r from-green-100 to-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-gentle">
-                                    <FontAwesomeIcon icon={faHeart} className="text-2xl text-green-600" />
-                                  </div>
-                                  <h3 className="text-xl font-elegant font-medium text-green-800">Divine Connection</h3>
-                                </div>
-                                <p className="text-lg leading-relaxed text-green-700 font-serif font-light text-center">
-                                  Two hearts found each other by Allah's grace. From friendship to love, from love to this beautiful commitment. We invite you to witness the beginning of our forever.
-                                </p>
-                              </div>
 
-                              {/* Our Journey */}
-                              <div className="wedding-card p-8 bg-gradient-to-br from-amber-50/80 to-rose-50/80 border-amber-200/30">
-                                <div className="text-center mb-6">
-                                  <div className="w-16 h-16 bg-gradient-to-r from-amber-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-gentle">
-                                    <FontAwesomeIcon icon={faRing} className="text-2xl text-amber-600" />
-                                  </div>
-                                  <h3 className="text-xl font-elegant font-medium text-amber-800">Our Journey</h3>
-                                </div>
-                                <p className="text-lg leading-relaxed text-amber-700 font-serif font-light text-center">
-                                  Little moments that make our love story special: sunset walks, sharing stories over tea, and dreaming about our future together. #doubleHaffairs25 represents our initials and the year we become one.
-                                </p>
-                              </div>
+
                             </div>
 
                             {/* Love Quote */}
@@ -629,8 +607,8 @@ export default function Landing() {
                           <FontAwesomeIcon icon={faGift} className="text-amber-600 text-sm" />
                         </div>
                         <div>
-                          <h3 className="text-base font-serif font-medium text-amber-800 mb-1">RSVP DEADLINE</h3>
-                          <p className="text-amber-700 font-light text-sm leading-relaxed">demeber 10</p>
+                          <h3 className="text-base font-serif font-medium text-amber-800 mb-1">when is RSVP deadline ?</h3>
+                          <p className="text-amber-700 font-light text-sm leading-relaxed">Please RSVP by december 10th, so we can have an accurate headcount</p>
                         </div>
                       </div>
                     </div>

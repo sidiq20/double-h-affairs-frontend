@@ -146,7 +146,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
       {/* Hero content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-8 z-30">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-elegant font-medium mb-6 animate-fade-in-up drop-shadow-lg">
-          Abdul-Hafeez & Hummulkhair
+          Hummulkhair & Abdul-Hafeez
         </h1>
         <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-200/90 to-transparent mb-6 rounded-full animate-fade-in"></div>
         <p className="text-xl md:text-2xl font-serif font-light mb-3 animate-fade-in-delay text-amber-100 drop-shadow-md">December 14th, 2025</p>
