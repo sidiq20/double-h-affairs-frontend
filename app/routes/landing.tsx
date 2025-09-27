@@ -41,7 +41,7 @@ const weddingContent = [
   {
     id: 'toast',
     title: "Bismillah ar-Rahman ar-Rahim",
-    content: 'Today, my heart feels stitched with quiet joy, every thread a prayer, every color a promise. You are my calm in the storm and my laughter in the silence. I ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light.To the man who softened my heart, I"m so grateful I get to call you mine.',
+    content: 'Today, my heart feels stitched with quiet joy, every thread a prayer, every color a promise. You are my calm in the storm and my laughter in the silence.\n\nI ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light.\n\nTo the man who softened my heart, I\'m so grateful I get to call you mine.',
     image: '/love.jpg',
     icon: faHeart,
     bgColor: 'from-orange-50 to-amber-100',
@@ -300,6 +300,9 @@ export default function Landing() {
                             <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
                               "I ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light."
                             </p>
+                            <p className="text-xl leading-relaxed text-amber-700 font-serif font-light italic mb-6">
+                              "To the man who softened my heart, I'm so grateful I get to call you mine."
+                            </p>
                             <p className="text-pink-600 font-script text-lg">
                               — Hummulkhair's Heart
                             </p>
@@ -553,6 +556,9 @@ export default function Landing() {
                       </p>
                       <p className="text-lg leading-relaxed text-amber-700 font-serif font-light italic mb-4">
                         "I ask Allah to let our days be woven with barakah, to wrap our moments in rahmah, and to let our tomorrows bloom brighter than today. To love that protects, to faith that assures, and to a future written with His light."
+                      </p>
+                      <p className="text-lg leading-relaxed text-amber-700 font-serif font-light italic mb-4">
+                        "To the man who softened my heart, I'm so grateful I get to call you mine."
                       </p>
                       <p className="text-pink-600 font-script text-base">
                         — Hummulkhair's Heart
