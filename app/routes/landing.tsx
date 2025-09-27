@@ -71,7 +71,7 @@ const weddingContent = [
   {
     id: 'tidbits',
     title: 'Couples Voice',
-    content: '"May Allah bless our union and fill our journey with endless love, joy, and barakah." — Abdul-Hafeez & Hummulkhair',
+    content: '"May Allah bless our union and fill our journey with endless love, joy, and barakah." — Hummulkhair & Abdul-Hafeez',
     image: '/image.jpg',
     icon: faGift,
     bgColor: 'from-pink-50 to-amber-100',
@@ -214,7 +214,7 @@ export default function Landing() {
                 </p>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto mb-2 rounded-full"></div>
                 <h1 className="text-2xl lg:text-3xl font-elegant font-medium text-amber-800 mb-2 drop-shadow-sm">
-                  Abdul-Hafeez & Hummulkhair
+                  Hummulkhair & Abdul-Hafeez
                 </h1>
                 <p className="text-amber-600 text-sm font-serif font-light tracking-wide">
                   December 14th, 2025 • Lagos, Nigeria
@@ -446,7 +446,7 @@ export default function Landing() {
                               "May Allah bless our union and fill our journey with endless love, joy, and barakah."
                             </p>
                             <p className="text-pink-600 font-script text-lg">
-                              — Abdul-Hafeez & Hummulkhair
+                              — Hummulkhair & Abdul-Hafeez
                             </p>
                           </div>
 
@@ -583,7 +583,7 @@ export default function Landing() {
                       </p>
                       {section.id === 'tidbits' && (
                         <p className="text-pink-600 font-script text-base mt-4 text-center">
-                          — Abdul-Hafeez & Hummulkhair
+                          — Hummulkhair & Abdul-Hafeez
                         </p>
                       )}
                     </div>

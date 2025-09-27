@@ -113,7 +113,7 @@ export default function RSVPForm({ className = "" }: RSVPFormProps) {
             </p>
             <div className="flex items-center justify-center space-x-2">
               <FontAwesomeIcon icon={faHeart} className="text-wedding-500 text-xl" />
-              <p className="text-wedding-600 font-medium">— Abdul-Hafeez & Hummulkhair </p>
+              <p className="text-wedding-600 font-medium">— Hummulkhair & Abdul-Hafeez </p>
               <FontAwesomeIcon icon={faHeart} className="text-wedding-500 text-xl" />
             </div>
           </div>
