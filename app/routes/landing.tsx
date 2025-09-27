@@ -68,7 +68,7 @@ const weddingContent = [
   {
     id: 'story',
     title: 'Our Story',
-    content: 'Two hearts, guided by Allah, crossed paths in medical school in ways only He could have planned. What began as a simple connection grew, over time, into friendship, trust, and finally love. With patience and faith, Allah turned that bond into the partnership we had both prayed for. Today, we are grateful to begin this new chapter not just as doctors shaping our careers, but as soulmates building a life together.',
+    content: 'Two hearts, guided by Allah, crossed paths in medical school in ways only He could have planned. What began as a simple connection, grew over time, into friendship, trust, and finally love. With patience and faith, Allah turned that bond into the partnership we had both prayed for. Today, we are grateful to begin this new chapter not just as doctors shaping our careers, but as soulmates building a life together.',
     image: '/double2.jpg',
     icon: faRing,
     bgColor: 'from-green-50 to-amber-100',
