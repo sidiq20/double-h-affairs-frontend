@@ -86,7 +86,7 @@ const weddingContent = [
   {
     id: 'qa',
     title: 'Q&A',
-    content: 'Frequently Asked Questions:\n\n• What time should I arrive? Please arrive by 1:30 PM\n• Is parking available? Yes, ample parking is provided\n• What is the deadline for RSVP? December 10\n• Children welcome? Yes, this is a family celebration',
+    content: 'Frequently Asked Questions:\n\n• What time should I arrive? Please arrive by 1:00 PM\n• Is parking available? Yes, ample parking is provided\n• What is the deadline for RSVP? December 10\n• Children welcome? Yes, this is a family celebration',
     image: '/them2.jpg',
     icon: faUsers,
     bgColor: 'from-purple-50 to-rose-100',
@@ -356,7 +356,7 @@ export default function Landing() {
                               <div className="text-center space-y-2">
                                 <p className="text-lg text-amber-600 font-light">Saturday</p>
                                 <p className="text-lg text-amber-600 font-light">December 14th, 2025</p>
-                                <p className="text-lg text-amber-600 font-light">2:00 PM</p>
+                                <p className="text-lg text-amber-600 font-light">1:00 PM</p>
                               </div>
                             </div>
 
@@ -427,7 +427,7 @@ export default function Landing() {
                                 </div>
                                 <div>
                                   <h3 className="text-lg font-serif font-medium text-purple-800 mb-2">What time should I arrive?</h3>
-                                  <p className="text-purple-700 font-light leading-relaxed">Please arrive by 1:30 PM to ensure you don't miss the ceremony.</p>
+                                  <p className="text-purple-700 font-light leading-relaxed">Please arrive by 1:00 PM to ensure you don't miss the ceremony.</p>
                                 </div>
                               </div>
                             </div>
@@ -614,7 +614,7 @@ export default function Landing() {
                         <h3 className="text-lg font-serif font-medium text-amber-800 text-center mb-3">When</h3>
                         <div className="text-center space-y-1">
                           <p className="text-amber-600 font-light">Sunday, December 14th, 2025</p>
-                          <p className="text-amber-600 font-light">2:00 PM</p>
+                          <p className="text-amber-600 font-light">1:00 PM</p>
                         </div>
                       </div>
 
@@ -669,7 +669,7 @@ export default function Landing() {
                         </div>
                         <div>
                           <h3 className="text-base font-serif font-medium text-purple-800 mb-1">What time should I arrive?</h3>
-                          <p className="text-purple-700 font-light text-sm leading-relaxed">Please arrive by 1:30 PM to ensure you don't miss the ceremony.</p>
+                          <p className="text-purple-700 font-light text-sm leading-relaxed">Please arrive by 1:00 PM to ensure you don't miss the ceremony.</p>
                         </div>
                       </div>
                     </div>
