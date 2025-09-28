@@ -104,7 +104,7 @@ const weddingContent = [
   {
     id: 'tidbits',
     title: "Couple's Voice",
-    content: 'With hearts full of gratitude, we give thanks to Almighty Allah for guiding our steps and making this union possible. We extend our deepest appreciation to our families, friends, and well-wishers for the love, prayers, and support you have shown us. Your presence on this journey is an honour we do not take for granted. As we look forward to sharing our special day with you, we pray that Allah rewards your kindness abundantly and fills your lives with peace, joy, and lasting blessings.',
+    content: 'With hearts full of gratitude, we give thanks to Almighty Allah for guiding our steps and making this union possible. We extend our deepest appreciation to our families, friends, and well-wishers for the love, prayers, and support you have shown us. Your presence in this journey is an honour we do not take for granted. As we look forward to sharing our special day with you, we pray that Allah rewards your kindness abundantly and fills your lives with peace, joy, and lasting blessings.',
     image: '/image.jpg',
     icon: faGift,
     bgColor: 'from-pink-50 to-amber-100',
