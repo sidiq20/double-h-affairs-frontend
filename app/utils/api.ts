@@ -1,4 +1,37 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://double-h-affairs-backend.onrender.com';
+// src/api.ts
+
+const PRIMARY_API_URL = import.meta.env.VITE_API_URL || 'https://double-h-affairs-backend.onrender.com';
+const FALLBACK_API_URL = 'https://double-h-affairs-backend-sidiq.onrender.com'; // 👈 your second backend
+
+async function fetchWithRetry(endpoint: string, options: RequestInit = {}): Promise<Response> {
+  const urls = [PRIMARY_API_URL, FALLBACK_API_URL, PRIMARY_API_URL]; // order of tries
+  let lastError: any;
+
+  for (const base of urls) {
+    const url = `${base}${endpoint}`;
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          ...options.headers,
+        },
+        ...options,
+      });
+
+      // if successful response
+      if (response.ok) {
+        return response;
+      }
+
+      // save error and continue loop
+      lastError = new Error(`Failed at ${base} with status ${response.status}`);
+    } catch (err) {
+      lastError = err;
+    }
+  }
+
+  throw lastError || new Error('All retries failed');
+}
 
 interface ApiResponse<T = any> {
   success?: boolean;
@@ -49,19 +82,10 @@ class ApiError extends Error {
 }
 
 async function apiRequest<T = any>(
-  endpoint: string, 
+  endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const url = `${API_BASE_URL}${endpoint}`;
-  
-  const response = await fetch(url, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-    ...options,
-  });
-
+  const response = await fetchWithRetry(endpoint, options);
   const data = await response.json();
 
   if (!response.ok) {
@@ -71,8 +95,11 @@ async function apiRequest<T = any>(
   return data;
 }
 
-// QR Code Management
-export async function generateQRCodes(count: number = 200): Promise<{ success: boolean; message: string; codes: any[] }> {
+// ---------------- QR Code Management ----------------
+
+export async function generateQRCodes(
+  count: number = 200
+): Promise<{ success: boolean; message: string; codes: any[] }> {
   return apiRequest('/api/generate', {
     method: 'POST',
     body: JSON.stringify({ count }),
@@ -95,15 +122,20 @@ export async function getAttendees(): Promise<{ success: boolean; attendees: Att
   return apiRequest('/api/attendees');
 }
 
-// Guest Initialization
-export async function initializeQR(codeId: string, name: string): Promise<{ success: boolean; message: string; name: string }> {
+// ---------------- Guest Initialization ----------------
+
+export async function initializeQR(
+  codeId: string,
+  name: string
+): Promise<{ success: boolean; message: string; name: string }> {
   return apiRequest('/api/init', {
     method: 'POST',
     body: JSON.stringify({ code_id: codeId, name }),
   });
 }
 
-// QR Scanning
+// ---------------- QR Scanning ----------------
+
 export async function scanQR(codeId: string): Promise<ScanResult> {
   return apiRequest('/api/scan', {
     method: 'POST',
@@ -111,12 +143,14 @@ export async function scanQR(codeId: string): Promise<ScanResult> {
   });
 }
 
-// Health Check
+// ---------------- Health Check ----------------
+
 export async function healthCheck(): Promise<{ status: string; database: string; timestamp: string }> {
   return apiRequest('/health');
 }
 
-// Utility function to extract code from URL
+// ---------------- Utility functions ----------------
+
 export function extractCodeFromUrl(url: string): string | null {
   try {
     const urlObj = new URL(url);
@@ -126,16 +160,13 @@ export function extractCodeFromUrl(url: string): string | null {
   }
 }
 
-// Utility function to extract code from QR data
 export function extractCodeFromQRData(data: string): string | null {
-  // Try to extract from URL first
   const codeFromUrl = extractCodeFromUrl(data);
   if (codeFromUrl) return codeFromUrl;
-  
-  // If it's just a UUID, return it directly
+
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   if (uuidRegex.test(data)) return data;
-  
+
   return null;
 }
 
