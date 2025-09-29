@@ -195,7 +195,7 @@ export default function Init() {
                       <span>Registering...</span>
                     </span>
                   ) : (
-                    <span className="flex items-center justify-center gap-3">
+                    <span className="flex items-center justify-center gap-3 text-slate-800">
                       <FontAwesomeIcon icon={faCheckCircle} />
                       <span>Register My QR Code</span>
                     </span>
