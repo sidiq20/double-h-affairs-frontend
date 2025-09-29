@@ -173,7 +173,7 @@ export default function Init() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Enter your full name"
-                      className="w-full px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all duration-300 text-lg placeholder-slate-400"
+                      className="w-full px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all duration-300 text-lg placeholder-slate-400 text-slate-800"
                       required
                       autoFocus
                       disabled={isSubmitting}
